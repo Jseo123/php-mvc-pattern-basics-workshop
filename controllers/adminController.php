@@ -1,6 +1,16 @@
 <?php
 
-require_once MODELS . "employeeModel.php";
+require_once MODELS . "adminModel.php";
+$action = "";
+if(isset($_REQUEST["action"])){
+    $action = $_REQUEST["action"];
+}
+
+if (function_exists($action)){
+call_user_func($action);
+}
+
+
 
 //OBTAIN THE ACCION PASSED IN THE URL AND EXECUTE IT AS A FUNCTION
 
@@ -13,23 +23,17 @@ require_once MODELS . "employeeModel.php";
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getAllEmployees()
-{
-    //
-}
+
 
 /**
  * This function calls the corresponding model function and includes the corresponding view
  */
-function getEmployee($request)
-{
-    //
-}
+
 
 /**
  * This function includes the error view with a message
  */
-function error($errorMsg)
+function error()
 {
-    require_once VIEWS . "/error/error.php";
+    require_once VIEWS . "/main/main.php";
 }

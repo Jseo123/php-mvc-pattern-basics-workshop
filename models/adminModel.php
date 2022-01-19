@@ -1,7 +1,9 @@
 <?php
 
-function get(){
+function logRedirect(){
+    require_once VIEWS . "admin/admin.php";
 }
 
-function getById($id){
+function logIn(){
+
 }
