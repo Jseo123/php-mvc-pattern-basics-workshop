@@ -8,6 +8,9 @@ include_once "config/constants.php";
 
 if(isset($_GET["logInAdmin"])){
 
-} else {
+        require_once(VIEWS . '/admin/admin.php');
+    }
+
+ else {
     require_once VIEWS . "main/main.php";
 }
