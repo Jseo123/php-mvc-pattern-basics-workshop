@@ -4,10 +4,14 @@ require_once MODELS . "adminModel.php";
 $action = "";
 if(isset($_REQUEST["action"])){
     $action = $_REQUEST["action"];
+} else {
+    require_once VIEWS . "main/main.php";
 }
 
 if (function_exists($action)){
 call_user_func($action);
+} else {
+    require_once VIEWS . "main/main.php";
 }
 
 

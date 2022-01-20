@@ -11,7 +11,7 @@
 <body class="text-center">
     <main class="form-signin">
     <?php 
-require_once(ASSETS . "htmls/admin-client-nav.html");
+require_once(ASSETS . "htmls/admin-client-nav.php");
 ?>
         <form action="./index.php?controller=admin&&action=logIn" method="POST">
             <h3 class="mb-3">POR FAVOR INICIE SESION</h3>
