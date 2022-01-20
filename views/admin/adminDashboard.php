@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php require_once  ASSETS . "htmls/header.html";
+    <?php require_once  ASSETS . "htmls/header.php";
     sessionCheck();
 
     ?>

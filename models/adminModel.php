@@ -74,3 +74,8 @@ function logOut(){
         session_destroy();
         require_once VIEWS . "admin/admin.php";
 }
+
+function showdashBoard(){
+    session_start();
+    require_once VIEWS . "admin/adminDashboard.php";
+}
