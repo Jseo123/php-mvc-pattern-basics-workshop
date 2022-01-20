@@ -30,7 +30,11 @@ require_once(ASSETS . "htmls/admin-client-nav.html");
             <button class="w-100 btn btn-lg btn-primary" type="submit">INICIAR SESION</button>
             <?php if(isset($failedLog)){
                 failedLog();
-            } ?>
+            } 
+            else if (isset($accessDenied)){
+                accessDenied();
+            }
+            ?>
         </form>
     </main>
 </body>

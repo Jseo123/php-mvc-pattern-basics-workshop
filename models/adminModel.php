@@ -40,3 +40,37 @@ catch (PDOException $e){
 function failedLog(){
     echo "<p class='alert alert-danger'>Either username or password incorrect. Please try again.</p>";
 }
+
+function sessionCheck(){
+    if (!isset($_SESSION["admin"])){
+  $accessDenied = true;
+  require_once VIEWS . "admin/admin.php";
+    }
+}
+
+function accessDenied(){
+    echo "<p class='alert alert-danger'>.Acess denied. Please log in.</p>";
+}
+
+function logOut(){
+
+        session_start();
+    
+        $_SESSION = array();
+    
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(
+                session_name(),
+                '',
+                time() - 42000,
+                $params["path"],
+                $params["domain"],
+                $params["secure"],
+                $params["httponly"]
+            );
+        }
+    
+        session_destroy();
+        require_once VIEWS . "admin/admin.php";
+}
